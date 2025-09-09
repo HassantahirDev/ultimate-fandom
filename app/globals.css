@@ -1,0 +1,388 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 270 91% 65%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 270 20% 96%;
+    --secondary-foreground: 270 91% 25%;
+    --muted: 270 20% 96%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 270 50% 92%;
+    --accent-foreground: 270 91% 25%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 20% 89%;
+    --input: 270 20% 89%;
+    --ring: 270 91% 65%;
+    --chart-1: 270 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 270 30% 98%;
+    --sidebar-foreground: 270 20% 26%;
+    --sidebar-primary: 270 91% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 270 40% 95%;
+    --sidebar-accent-foreground: 270 91% 25%;
+    --sidebar-border: 270 30% 91%;
+    --sidebar-ring: 270 91% 65%;
+
+    /* Brand Colors */
+    --brand-primary: 0 84% 60%;
+    --brand-primary-foreground: 0 0% 98%;
+    --brand-secondary: 0 74% 64%;
+    --brand-hover: 0 84% 55%;
+    --brand-muted: 0 50% 95%;
+    --brand-muted-dark: 0 60% 10%;
+    --brand-accent: 0 70% 92%;
+    --brand-accent-dark: 0 70% 15%;
+    
+    /* Semantic Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 9%;
+    --info: 221 83% 53%;
+    --info-foreground: 0 0% 98%;
+    
+    /* Gray Scale */
+    --gray-50: 0 0% 98%;
+    --gray-100: 0 0% 96%;
+    --gray-200: 0 0% 89%;
+    --gray-300: 0 0% 83%;
+    --gray-400: 0 0% 64%;
+    --gray-500: 0 0% 45%;
+    --gray-600: 0 0% 32%;
+    --gray-700: 0 0% 25%;
+    --gray-800: 0 0% 15%;
+    --gray-900: 0 0% 9%;
+  }
+  
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Brand Colors - Dark Mode */
+    --brand-primary: 0 84% 65%;
+    --brand-primary-foreground: 0 0% 9%;
+    --brand-secondary: 0 74% 70%;
+    --brand-hover: 0 84% 60%;
+    --brand-muted: 0 60% 10%;
+    --brand-muted-dark: 0 50% 95%;
+    --brand-accent: 0 70% 15%;
+    --brand-accent-dark: 0 70% 92%;
+    
+    /* Semantic Colors - Dark Mode */
+    --success: 142 76% 41%;
+    --success-foreground: 0 0% 9%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 9%;
+    --info: 221 83% 58%;
+    --info-foreground: 0 0% 9%;
+    
+    /* Gray Scale - Dark Mode */
+    --gray-50: 0 0% 9%;
+    --gray-100: 0 0% 15%;
+    --gray-200: 0 0% 25%;
+    --gray-300: 0 0% 32%;
+    --gray-400: 0 0% 45%;
+    --gray-500: 0 0% 64%;
+    --gray-600: 0 0% 83%;
+    --gray-700: 0 0% 89%;
+    --gray-800: 0 0% 96%;
+    --gray-900: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  outline: none;
+  overflow-x: auto;
+  word-wrap: break-word;
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* tiptap-extension-resize-image styles */
+.ProseMirror .image {
+  position: relative;
+  display: inline-block;
+  margin: 8px;
+  vertical-align: top;
+}
+
+.ProseMirror .image img {
+  display: block;
+  border-radius: 4px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Image alignment and text wrapping */
+.ProseMirror .image.float-left {
+  float: left;
+  margin-right: 16px;
+  margin-bottom: 8px;
+  margin-left: 0;
+}
+
+.ProseMirror .image.float-right {
+  float: right;
+  margin-left: 16px;
+  margin-bottom: 8px;
+  margin-right: 0;
+}
+
+.ProseMirror .image.float-none {
+  float: none;
+  display: block;
+  margin: 8px auto;
+}
+
+.ProseMirror .image.inline {
+  display: inline-block;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+
+.ProseMirror .image.ProseMirror-selectednode {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.ProseMirror .image:hover {
+  outline: 1px solid #3b82f6;
+  outline-offset: 1px;
+}
+
+/* Resize handles for the extension */
+.ProseMirror .image .resize-handle {
+  position: absolute;
+  background: #3b82f6;
+  border: 2px solid white;
+  border-radius: 2px;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ProseMirror .image:hover .resize-handle,
+.ProseMirror .image.ProseMirror-selectednode .resize-handle {
+  opacity: 1;
+}
+
+.ProseMirror .image .resize-handle.nw { top: -5px; left: -5px; cursor: nw-resize; }
+.ProseMirror .image .resize-handle.ne { top: -5px; right: -5px; cursor: ne-resize; }
+.ProseMirror .image .resize-handle.sw { bottom: -5px; left: -5px; cursor: sw-resize; }
+.ProseMirror .image .resize-handle.se { bottom: -5px; right: -5px; cursor: se-resize; }
+
+/* Table Styles */
+.ProseMirror table {
+  border-collapse: collapse;
+  margin: 20px 0;
+  width: auto;
+  min-width: 100%;
+  border: 1px solid #e5e7eb;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  vertical-align: top;
+  min-width: 100px;
+  position: relative;
+}
+
+.ProseMirror table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  text-align: left;
+}
+
+.ProseMirror table p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Borderless table option */
+.ProseMirror table.borderless {
+  border: none;
+}
+
+.ProseMirror table.borderless td,
+.ProseMirror table.borderless th {
+  border: none;
+}
+
+.ProseMirror table.borderless th {
+  background-color: transparent;
+}
+
+.ProseMirror blockquote {
+  border-left: 4px solid #e2e8f0;
+  padding-left: 16px;
+  margin: 16px 0;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.ProseMirror pre {
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 12px 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+.ProseMirror code {
+  background-color: #f3f4f6;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6 {
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.ProseMirror h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.ProseMirror h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.ProseMirror h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ProseMirror h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.ProseMirror h5 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ProseMirror h6 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ProseMirror p {
+  margin: 8px 0;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  margin: 8px 0;
+  padding-left: 24px;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #9ca3af;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
