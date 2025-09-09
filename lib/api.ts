@@ -24,7 +24,7 @@ interface Article {
   viewCount?: number
   isBreaking?: boolean
   isFeatured?: boolean
-}
+} 
 
 interface Category {
   id: string
